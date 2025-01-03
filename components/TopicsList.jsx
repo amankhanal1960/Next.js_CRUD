@@ -3,20 +3,20 @@ import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
 export default async function TopicsList() {
-  try {
-    const response = await fetch("http://localhost:3000/api/topics", {
-      method: "POST",
-      body: { test: "test" },
-    });
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
+  // try {
+  //   const response = await fetch("http://localhost:3000/api/topics", {
+  //     method: "POST",
+  //     body: { test: "test" },
+  //   });
+  //   if (!response.ok) {
+  //     throw new Error(`Response status: ${response.status}`);
+  //   }
 
-    const json = await response.json();
-    console.log(json);
-  } catch (error) {
-    console.log(error.message);
-  }
+  //   const json = await response.json();
+  //   console.log(json);
+  // } catch (error) {
+  //   console.log(error.message);
+  // }
 
   return (
     <>
