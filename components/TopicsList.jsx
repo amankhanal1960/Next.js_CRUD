@@ -21,7 +21,7 @@ export default async function TopicsList() {
   const { topics } = await GetTopics();
 
   return (
-    <>
+    <div>
       {topics.map((t) => (
         <div className="p-4 border border-slate-300 my-3 flex gap-5 justify-between items-start">
           <div>
@@ -29,13 +29,13 @@ export default async function TopicsList() {
             <div>{`${t.description}`}</div>
           </div>
           <div className="flex gap-2">
-            <RemoveBtn />
+            <RemoveBtn id={t._id} />
             <Link href={`/editTopic/${t._id}`}>
               <HiPencilAlt size={24} />
             </Link>
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }

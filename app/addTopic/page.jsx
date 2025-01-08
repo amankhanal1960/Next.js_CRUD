@@ -1,6 +1,8 @@
 "use client"; // This makes the component a Client Component
-
+import { useRouter } from "next/navigation";
 export default function AddTopic() {
+  const router = useRouter();
+
   const postData = async (event) => {
     event.preventDefault(); // Prevent form submission from reloading the page
     const formData = new FormData(event.target); // Collect form data
@@ -24,9 +26,9 @@ export default function AddTopic() {
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);
       }
-
       const data = await response.json();
       console.log("Success:", data);
+      router.push("/");
     } catch (error) {
       console.error("Error:", error);
     }

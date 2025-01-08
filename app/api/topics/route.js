@@ -19,27 +19,6 @@ export async function POST(request) {
   }
 }
 
-// export const POST = async function POST(request) {
-//   try {
-//     const body = await request.json();
-//     await connectMongoDB();
-//     const newTopic = new Topic(body);
-//     await newTopic.save();
-
-//     return NextResponse(
-//       json.stringify({
-//         message: "Topic created successfully",
-//         topic: newTopic,
-//       }),
-//       { status: 201 }
-//     );
-//   } catch (error) {
-//     return new NextResponse("Error creating topic" + error.message, {
-//       status: 500,
-//     });
-//   }
-// };
-
 export async function GET() {
   try {
     await connectMongoDB();
